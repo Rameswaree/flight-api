@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "fc30ba14-694d-46f8-a3cd-19017f37648a",
+		"name": "Flight API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19438758"
+	},
+	"item": [
+		{
+			"name": "Get Flight Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Flight Data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 200,\r\n    \"airline\": \"Finnair\",\r\n    \"supplier\": \"Skyscanner\",\r\n    \"fare\": 140,\r\n    \"departureAirport\": \"ZRH\",\r\n    \"destinationAirport\": \"CPH\",\r\n    \"departureTime\": \"2025-06-04T10:30:25.583146Z\",\r\n    \"arrivalTime\": \"2025-06-04T14:37:25.583146Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/{{id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Flight Data",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Flight Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"airline\": \"Finnair\",\r\n    \"supplier\": \"Skyscanner\",\r\n    \"fare\": 140,\r\n    \"departureAirport\": \"ZRH\",\r\n    \"destinationAirport\": \"CPH\",\r\n    \"departureTime\": \"2025-06-04T10:30:25.583146Z\",\r\n    \"arrivalTime\": \"2025-06-04T14:37:25.583146Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Flight Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/search?origin={{origin}}&destination={{destination}}&airline={{airline}}&departureTime={{departureTime}}&arrivalTime={{arrivalTime}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "{{origin}}"
+						},
+						{
+							"key": "destination",
+							"value": "{{destination}}"
+						},
+						{
+							"key": "airline",
+							"value": "{{airline}}"
+						},
+						{
+							"key": "departureTime",
+							"value": "{{departureTime}}"
+						},
+						{
+							"key": "arrivalTime",
+							"value": "{{arrivalTime}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Flights Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{id}}/all?pageNum={{pageNum}}&pageSize={{pageSize}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{id}}",
+						"all"
+					],
+					"query": [
+						{
+							"key": "pageNum",
+							"value": "{{pageNum}}"
+						},
+						{
+							"key": "pageSize",
+							"value": "{{pageSize}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/api/flights",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "200",
+			"type": "string"
+		},
+		{
+			"key": "pageNum",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "pageSize",
+			"value": "10",
+			"type": "string"
+		},
+		{
+			"key": "origin",
+			"value": "AMS",
+			"type": "string"
+		},
+		{
+			"key": "destination",
+			"value": "CDG",
+			"type": "string"
+		},
+		{
+			"key": "airline",
+			"value": "Lufthansa",
+			"type": "string"
+		},
+		{
+			"key": "departureTime",
+			"value": "2025-06-06T17:30:25.675678Z",
+			"type": "string"
+		},
+		{
+			"key": "arrivalTime",
+			"value": "2025-06-06T20:46:25.675678Z",
+			"type": "string"
+		}
+	]
+}
