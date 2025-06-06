@@ -15,12 +15,14 @@ Clients can also search and filter flight data based on origin, destination, air
    git clone https://github.com/Rameswaree/flight-api
    ```
 2. Before running the project, ensure you have a local MySQL database set up. Update the `application.properties` and the `application-test.properties` file with your database credentials.
-   Given below is the properties file configuration:
-   ```properties
-    spring.datasource.url=jdbc:mysql://localhost:3308/flight_assignment_db?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+   Given below is an example of how the `application.properties` file should look like:
+   ```
+    spring.datasource.url=jdbc:mysql://localhost:3306/flight_db
     spring.datasource.username=root
-    spring.datasource.password=CodeJava007
-   ```'
+    spring.datasource.password=your_password
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.show-sql=true
+   ```
 3. Run the project using the following commands:
     ```bash
     mvn clean install
